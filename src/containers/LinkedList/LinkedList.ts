@@ -112,7 +112,7 @@ export class LinkedList {
   }
 
   /**
-   *  Reverse LinkedList in
+   *  Reverse LinkedList in place
    *  @time {O(n)}
    */
   reverse() {
