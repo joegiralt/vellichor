@@ -19,7 +19,7 @@ export class LinkedList {
 
   /**
    *  creates a LinkedList
-   *  @complexity {O(1)}
+   *  @time {O(1)}
    */
   constructor(value: any) {
     this.head = new ListNode(value);
@@ -29,7 +29,7 @@ export class LinkedList {
 
   /**
    *  Appends a new value to the tail of the LinkedList
-   *  @complexity {O(1)}
+   *  @time {O(1)}
    */
   append(value: any): LinkedList {
     const newNode = new ListNode(value);
@@ -41,7 +41,7 @@ export class LinkedList {
 
   /**
    *  Prepends a new value to the head of the LinkedList
-   *  @complexity {O(1)}
+   *  @time {O(1)}
    */
   prepend(value: any) {
     const newNode = new ListNode(value);
@@ -53,7 +53,7 @@ export class LinkedList {
 
   /**
    *  Maps the values to an array, `head.value` is at the 0th index and the `tail.value` is at the ultimate index
-   *  @complexity {O(n)}
+   *  @time {O(n)}
    */
   asArray(): Array<any> {
     const array = [];
@@ -67,7 +67,7 @@ export class LinkedList {
 
   /**
    *  Inserts a value at a particular index
-   *  @complexity {O(n)}
+   *  @time {O(n)}
    */
   insert(index: number, value: any) {
     if (index >= this.size) {
@@ -81,13 +81,13 @@ export class LinkedList {
     leader.next = newNode;
     newNode.next = holdingPointer;
     this.size++;
-    return this.asArray();
+    return this;
   }
 
   /**
-   *  traverse to a node at a particular index
+   *  Traverse to a node at a particular index
    *  @returns {ListNode}
-   *  @complexity {O(n)}
+   *  @time {O(n)}
    */
   traverseToIndex(index: number): ListNode {
     let counter = 0;
@@ -98,17 +98,27 @@ export class LinkedList {
     }
     return currentNode;
   }
-  remove(index: number) {
-    // Check Parameters
+
+  /**
+   *  Removes a node at a particular index
+   *  @returns {ListNode}
+   *  @time {O(n)}
+   */
+  remove(index: number): LinkedList {
     const leader = this.traverseToIndex(index - 1);
     const unwantedNode = leader.next;
     leader.next = unwantedNode.next;
     this.size--;
-    return this.asArray();
+    return this;
   }
-  reverse() {
+
+  /**
+   *  Reverse LinkedList in
+   *  @time {O(n)}
+   */
+  reverse(): LinkedList {
     if (!this.head.next) {
-      return this.head;
+      return this;
     }
     let first = this.head;
     this.tail = this.head;
@@ -123,6 +133,6 @@ export class LinkedList {
 
     this.head.next = null;
     this.head = first;
-    return this.asArray();
+    return this;
   }
 }
