@@ -20,8 +20,9 @@
   },
   "homepage": "https://github.com/joegiralt/vellichor#readme",
   "devDependencies": {
-    "@types/jest": "^24.0.23",
     "@types/chance": "^1.0.7",
+    "@types/jest": "^24.0.23",
+    "codecov": "^3.6.1",
     "fast-check": "^1.18.1",
     "jest": "^24.9.0",
     "jest-chance": "^0.1.8",
