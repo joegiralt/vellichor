@@ -20,7 +20,7 @@ test("LinkedList can be appended to", () => {
   expect(currentLinkedList.size).toBe(2);
 });
 
-test("LinkedList can be preappended", () => {
+test("LinkedList can be prepended", () => {
   const initValue = `Init value ${chance.integer()}`;
   const valueToBeAppened = `appended value ${chance.integer()}`;
   const currentLinkedList = new LinkedList(initValue);
