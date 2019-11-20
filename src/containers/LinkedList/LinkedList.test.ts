@@ -1,6 +1,5 @@
 import { LinkedList } from "../LinkedList/LinkedList";
 import { chance } from "jest-chance";
-import { stringLiteral } from "@babel/types";
 
 test("LinkedList, when initiated,  has correct value and size", () => {
   const someValue = chance.integer();

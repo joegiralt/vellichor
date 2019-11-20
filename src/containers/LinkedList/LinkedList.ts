@@ -31,7 +31,7 @@ export class LinkedList {
    *  Appends a new value to the tail of the LinkedList
    *  @time {O(1)}
    */
-  append(value: any): LinkedList {
+  append(value: any) {
     const newNode = new ListNode(value);
     this.tail.next = newNode;
     this.tail = newNode;
@@ -101,10 +101,9 @@ export class LinkedList {
 
   /**
    *  Removes a node at a particular index
-   *  @returns {ListNode}
    *  @time {O(n)}
    */
-  remove(index: number): LinkedList {
+  remove(index: number) {
     const leader = this.traverseToIndex(index - 1);
     const unwantedNode = leader.next;
     leader.next = unwantedNode.next;
@@ -116,7 +115,7 @@ export class LinkedList {
    *  Reverse LinkedList in
    *  @time {O(n)}
    */
-  reverse(): LinkedList {
+  reverse() {
     if (!this.head.next) {
       return this;
     }
