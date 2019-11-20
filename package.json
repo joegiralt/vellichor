@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest"
+    "build": "tsc",
+    "prepare": "npm run test && npm run build",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -28,5 +30,8 @@
   },
   "jest": {
     "globalSetup": "jest-chance"
+  },
+  "dependencies": {
+    "@types/chance": "^1.0.7"
   }
 }
