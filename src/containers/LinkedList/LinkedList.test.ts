@@ -22,11 +22,11 @@ test("LinkedList can be appended to", () => {
 
 test("LinkedList can be prepended", () => {
   const initValue = `Init value ${chance.integer()}`;
-  const valueToBeAppened = `appended value ${chance.integer()}`;
+  const valueToBePrepened = `appended value ${chance.integer()}`;
   const currentLinkedList = new LinkedList(initValue);
   expect(currentLinkedList.tail.value).toBe(initValue);
-  currentLinkedList.append(valueToBeAppened);
-  expect(currentLinkedList.tail.value).toBe(valueToBeAppened);
+  currentLinkedList.prepend(valueToBePrepened);
+  expect(currentLinkedList.head.value).toBe(valueToBePrepened);
   expect(currentLinkedList.size).toBe(2);
 });
 
@@ -65,8 +65,8 @@ test("LinkedList can have a value inserted at a particular index", () => {
 test("LinkedList can have a value removed at a particular index", () => {
   const headValue = `head value ${chance.integer()}`;
   const currentLinkedList = new LinkedList(headValue);
-  const wordListLength = chance.integer({ min: 5, max: 20 });
-  const removeIndex = chance.integer({ min: 2, max: wordListLength });
+  const wordListLength = chance.integer({ min: 10, max: 20 });
+  const removeIndex = chance.integer({ min: 7, max: wordListLength });
   const words = chance.sentence({ words: wordListLength }).split(" ");
 
   words.forEach((word: string) => currentLinkedList.append(word));
@@ -107,4 +107,9 @@ test("LinkedList can traverse to a particular index", () => {
     .traverseToIndex(insertionIndex);
 
   expect(listNode.value).toBe(valueToBeInserted);
+});
+
+test("LinkedList reversed empty does nothing", () => {
+  const currentLinkedList = new LinkedList("HI");
+  expect(currentLinkedList.reverse()).toBe(currentLinkedList);
 });
