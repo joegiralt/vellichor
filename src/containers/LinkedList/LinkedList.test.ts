@@ -113,3 +113,10 @@ test("LinkedList reversed empty does nothing", () => {
   const currentLinkedList = new LinkedList("HI");
   expect(currentLinkedList.reverse()).toBe(currentLinkedList);
 });
+
+test("LinkedList append value is still appened if target index is too high", () => {
+  const currentLinkedList = new LinkedList("HI");
+  const newValue = "bye";
+  currentLinkedList.insert(1000000, newValue);
+  expect(currentLinkedList.tail.value).toBe(newValue);
+});
