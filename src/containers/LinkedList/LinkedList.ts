@@ -1,21 +1,12 @@
-class ListNode {
-  value: any;
-  next: ListNode | null;
-
-  constructor(value: any) {
-    this.value = value;
-    this.next = null;
-  }
-}
-
+import ListNode from "./ListNode";
 /**
  *  Implements a singlely LinkedList
  *
  */
 export class LinkedList {
-  head: ListNode | null;
-  tail: ListNode | null;
-  size: number;
+  public head: ListNode | null;
+  public tail: ListNode | null;
+  public size: number;
 
   /**
    *  creates a LinkedList
@@ -31,7 +22,7 @@ export class LinkedList {
    *  Appends a new value to the tail of the LinkedList
    *  @time {O(1)}
    */
-  append(value: any) {
+  public append(value: any) {
     const newNode = new ListNode(value);
     this.tail.next = newNode;
     this.tail = newNode;
@@ -43,7 +34,7 @@ export class LinkedList {
    *  Prepends a new value to the head of the LinkedList
    *  @time {O(1)}
    */
-  prepend(value: any) {
+  public prepend(value: any) {
     const newNode = new ListNode(value);
     newNode.next = this.head;
     this.head = newNode;
@@ -55,7 +46,7 @@ export class LinkedList {
    *  Maps the values to an array, `head.value` is at the 0th index and the `tail.value` is at the ultimate index
    *  @time {O(n)}
    */
-  asArray(): Array<any> {
+  public asArray(): any[] {
     const array = [];
     let currentNode = this.head;
     while (currentNode !== null) {
@@ -69,7 +60,7 @@ export class LinkedList {
    *  Inserts a value at a particular index
    *  @time {O(n)}
    */
-  insert(index: number, value: any) {
+  public insert(index: number, value: any): this {
     if (index >= this.size) {
       return this.append(value);
     }
@@ -89,7 +80,7 @@ export class LinkedList {
    *  @returns {ListNode}
    *  @time {O(n)}
    */
-  traverseToIndex(index: number): ListNode {
+  public traverseToIndex(index: number): ListNode {
     let counter = 0;
     let currentNode = this.head;
     while (counter !== index) {
@@ -103,7 +94,7 @@ export class LinkedList {
    *  Removes a node at a particular index
    *  @time {O(n)}
    */
-  remove(index: number) {
+  public remove(index: number) {
     const leader = this.traverseToIndex(index - 1);
     const unwantedNode = leader.next;
     leader.next = unwantedNode.next;
@@ -115,7 +106,7 @@ export class LinkedList {
    *  Reverse LinkedList in place
    *  @time {O(n)}
    */
-  reverse() {
+  public reverse() {
     if (!this.head.next) {
       return this;
     }

@@ -1,5 +1,5 @@
-import { LRUCache } from "../LRUCache/LRUCache";
 import { chance } from "jest-chance";
+import { LRUCache } from "../LRUCache/LRUCache";
 
 test("get and set a value", () => {
   const lruCache = new LRUCache(10);
@@ -40,6 +40,10 @@ test("delete a key from cache", () => {
   expect(lruCache.size).toBe(0);
 });
 
-test("changing the max drops older items older than the new max", () => {});
+test("changing the max drops older items older than the new max", () => {
+  expect(true).toBe(undefined);
+});
 
-test("cache is cleared", () => {});
+test("cache is cleared", () => {
+  expect(true).toBe(undefined);
+});

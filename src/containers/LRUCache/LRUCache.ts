@@ -1,17 +1,16 @@
-interface LRUOptions {
+interface ILRUOptions {
   max: number;
 }
 export class LRUCache {
-  max: number;
-  size: number;
-  store: Map<any, any>;
-  oldestElement: any;
+  public max: number;
+  public size: number;
+  public store: Map<any, any>;
 
   /**
    *  creates a LRUCache
    *  @time {O(1)}
    */
-  constructor(options: LRUOptions | number) {
+  constructor(options: ILRUOptions | number) {
     if (typeof options === "object") {
       this.max = options.max;
     } else {
@@ -25,9 +24,11 @@ export class LRUCache {
    *  gets a value from the cache associated with a key
    *  @time {O(1)}
    */
-  get(key: any) {
+  public get(key: any) {
     const value = this.store.get(key);
-    if (!value) return undefined;
+    if (!value) {
+      return undefined;
+    }
     this.store.delete(key);
     this.store.set(key, value);
     return value;
@@ -37,7 +38,7 @@ export class LRUCache {
    *  sets a value from the cache associated with a key
    *  @time {O(1)}
    */
-  set(key: any, value: any) {
+  public set(key: any, value: any) {
     const oldValue = this.get(key);
     if (oldValue === undefined) {
       if (this.store.size === this.max) {
@@ -54,7 +55,7 @@ export class LRUCache {
    *  deletes a key value pair from the cache associated with a key
    *  @time {O(1)}
    */
-  delete(key: any) {
+  public delete(key: any) {
     this.store.delete(key);
     this.size = this.store.size;
     return this;
