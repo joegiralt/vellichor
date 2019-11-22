@@ -1,6 +1,4 @@
 coverage/
-dist/
-docs/
 example/output/
 lib/
 lib-*/
