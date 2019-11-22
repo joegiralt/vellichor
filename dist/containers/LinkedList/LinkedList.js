@@ -5,13 +5,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const ListNode_1 = __importDefault(require("./ListNode"));
 /**
- *  Implements a singlely LinkedList
+ *  Implements a singly linked list.
+ *  @class LinkedList
+ *  @link https://en.wikipedia.org/wiki/Linked_list
  *
  */
 class LinkedList {
     /**
-     *  creates a LinkedList
-     *  @time {O(1)}
+     *  Creates a LinkedList.
+     *  @param {*} value
+     *  @time O(1)
      */
     constructor(value) {
         this.head = new ListNode_1.default(value);
@@ -19,8 +22,10 @@ class LinkedList {
         this.size = 1;
     }
     /**
-     *  Appends a new value to the tail of the LinkedList
-     *  @time {O(1)}
+     *  Appends a new value to the tail of the LinkedList.
+     *  @param {*} value
+     *  @time O(1)
+     *  @return this
      */
     append(value) {
         const newNode = new ListNode_1.default(value);
@@ -30,8 +35,10 @@ class LinkedList {
         return this;
     }
     /**
-     *  Prepends a new value to the head of the LinkedList
-     *  @time {O(1)}
+     *  Prepends a new value to the head of the LinkedList.
+     *  @param {*} value
+     *  @time O(1)
+     *  @return this
      */
     prepend(value) {
         const newNode = new ListNode_1.default(value);
@@ -41,8 +48,9 @@ class LinkedList {
         return this;
     }
     /**
-     *  Maps the values to an array, `head.value` is at the 0th index and the `tail.value` is at the ultimate index
-     *  @time {O(n)}
+     *  Maps the values to an array, `head.value` is at the 0th index and the `tail.value` is at the ultimate index.
+     *  @time O(n)
+     *  @return {any[]} an array of node values
      */
     asArray() {
         const array = [];
@@ -55,7 +63,10 @@ class LinkedList {
     }
     /**
      *  Inserts a value at a particular index
-     *  @time {O(n)}
+     *  @time O(n)
+     *  @param {number} index
+     *  @param {any} value
+     *  @return this
      */
     insert(index, value) {
         if (index >= this.size) {
@@ -70,9 +81,10 @@ class LinkedList {
         return this;
     }
     /**
-     *  Traverse to a node at a particular index
-     *  @returns {ListNode}
-     *  @time {O(n)}
+     *  Traverse to a node at a particular index.
+     *  @time O(n)
+     *  @param {number} index
+     *  @return ListNode
      */
     traverseToIndex(index) {
         let counter = 0;
@@ -84,8 +96,10 @@ class LinkedList {
         return currentNode;
     }
     /**
-     *  Removes a node at a particular index
-     *  @time {O(n)}
+     *  Removes a node at a particular index.
+     *  @param {number} index
+     *  @time O(n)
+     *  @return this
      */
     remove(index) {
         const leader = this.traverseToIndex(index - 1);
@@ -95,8 +109,9 @@ class LinkedList {
         return this;
     }
     /**
-     *  Reverse LinkedList in place
-     *  @time {O(n)}
+     *  Reverse a LinkedList in place.
+     *  @time O(n)
+     *  @return this
      */
     reverse() {
         if (!this.head.next) {
