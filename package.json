@@ -24,6 +24,7 @@
   "devDependencies": {
     "@types/chance": "^1.0.7",
     "@types/jest": "^24.0.23",
+    "better-docs": "^1.4.7",
     "codecov": "^3.6.1",
     "fast-check": "^1.18.1",
     "jest": "^24.9.0",

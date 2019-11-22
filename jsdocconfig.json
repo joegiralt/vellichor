@@ -1,8 +1,8 @@
 {
-  "plugins": [],
+  "plugins": ["node_modules/better-docs/typescript"],
   "recurseDepth": 10,
   "source": {
-    "includePattern": ".+\\.js(doc|x)?$",
+    "includePattern": "\\.(jsx|js|ts|tsx)$",
     "excludePattern": "(^|\\/|\\\\)_"
   },
   "sourceType": "module",
@@ -15,6 +15,6 @@
     "monospaceLinks": false
   },
   "opts": {
-    "template": "node_modules/postman-jsdoc-theme"
+    "template": "node_modules/better-docs"
   }
 }
