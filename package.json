@@ -9,7 +9,7 @@
     "prepare": "npm run test && npm run build",
     "test": "jest --coverage",
     "lint": "tslint 'src/**/*.ts'",
-    "docs": "tsc && node_modules/.bin/jsdoc -c jsdocconfig.json dist/**/* README.md -d docs"
+    "docs": "tsc && node_modules/.bin/jsdoc -c jsdocconfig.json -t node_modules/postman-jsdoc-theme dist/**/* README.md -d docs"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "jest": "^24.9.0",
     "jest-chance": "^0.1.8",
     "jsdoc": "^3.6.3",
+    "postman-jsdoc-theme": "0.0.3",
     "ts-jest": "^24.1.0",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
