@@ -9,7 +9,7 @@
     "prepare": "npm run test && npm run build",
     "test": "jest --coverage",
     "lint": "tslint 'src/**/*.ts'",
-    "docs": "tsc && node_modules/.bin/jsdoc -c jsdocconfig.json dist/**/* -d docs"
+    "docs": "tsc && node_modules/.bin/jsdoc -c jsdocconfig.json dist/**/* README.md -d docs"
   },
   "repository": {
     "type": "git",
