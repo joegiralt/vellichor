@@ -6,7 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const ListNode_1 = __importDefault(require("./ListNode"));
 /**
  *  Implements a singly linked list.
- *  {@link https://en.wikipedia.org/wiki/Linked_list Wikipedia}
+ *
+ *  {@link https://en.wikipedia.org/wiki/Linked_list Linked List on Wikipedia}
  */
 class LinkedList {
     /**

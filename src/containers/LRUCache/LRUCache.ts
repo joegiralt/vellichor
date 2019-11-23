@@ -1,7 +1,8 @@
 /**
  *  Implements an LRUCache using the ES6 Map.prototype and not
  *  a custom doubly linked list.
- *  {@link https://en.wikipedia.org/wiki/Cache_replacement_policies Wikipedia}
+ *
+ *  {@link https://en.wikipedia.org/wiki/Cache_replacement_policies Cache Strategies on Wikipedia}
  */
 export class LRUCache {
   public max: number;

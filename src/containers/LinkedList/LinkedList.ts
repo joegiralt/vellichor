@@ -1,7 +1,8 @@
 import ListNode from "./ListNode";
 /**
  *  Implements a singly linked list.
- *  {@link https://en.wikipedia.org/wiki/Linked_list Wikipedia}
+ *
+ *  {@link https://en.wikipedia.org/wiki/Linked_list Linked List on Wikipedia}
  */
 export class LinkedList {
   public head: ListNode | null;
