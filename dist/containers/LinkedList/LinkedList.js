@@ -25,7 +25,7 @@ class LinkedList {
      *  Appends a new value to the tail of the LinkedList.
      *  @param {*} value
      *  @time O(1)
-     *  @return this
+     *  @return {LinkedList} this instance.
      */
     append(value) {
         const newNode = new ListNode_1.default(value);
@@ -38,7 +38,7 @@ class LinkedList {
      *  Prepends a new value to the head of the LinkedList.
      *  @param {*} value
      *  @time O(1)
-     *  @return this
+     *  @return {LinkedList} this instance.
      */
     prepend(value) {
         const newNode = new ListNode_1.default(value);
@@ -50,7 +50,7 @@ class LinkedList {
     /**
      *  Maps the values to an array, `head.value` is at the 0th index and the `tail.value` is at the ultimate index.
      *  @time O(n)
-     *  @return {any[]} an array of node values
+     *  @return {any[]} An array of node values.
      */
     asArray() {
         const array = [];
@@ -66,7 +66,7 @@ class LinkedList {
      *  @time O(n)
      *  @param {number} index
      *  @param {any} value
-     *  @return this
+     *  @return {LinkedList} this instance.
      */
     insert(index, value) {
         if (index >= this.size) {
@@ -81,25 +81,10 @@ class LinkedList {
         return this;
     }
     /**
-     *  Traverse to a node at a particular index.
-     *  @time O(n)
-     *  @param {number} index
-     *  @return ListNode
-     */
-    traverseToIndex(index) {
-        let counter = 0;
-        let currentNode = this.head;
-        while (counter !== index) {
-            currentNode = currentNode.next;
-            counter++;
-        }
-        return currentNode;
-    }
-    /**
      *  Removes a node at a particular index.
      *  @param {number} index
      *  @time O(n)
-     *  @return this
+     *  @return {LinkedList} this instance.
      */
     remove(index) {
         const leader = this.traverseToIndex(index - 1);
@@ -111,7 +96,7 @@ class LinkedList {
     /**
      *  Reverse a LinkedList in place.
      *  @time O(n)
-     *  @return this
+     *  @return {LinkedList} this instance.
      */
     reverse() {
         if (!this.head.next) {
@@ -129,6 +114,21 @@ class LinkedList {
         this.head.next = null;
         this.head = first;
         return this;
+    }
+    /**
+     *  Traverses to a node at a particular index.
+     *  @time O(n)
+     *  @param {number} index
+     *  @return {LinkedNode} List Node is returned
+     */
+    traverseToIndex(index) {
+        let counter = 0;
+        let currentNode = this.head;
+        while (counter !== index) {
+            currentNode = currentNode.next;
+            counter++;
+        }
+        return currentNode;
     }
 }
 exports.LinkedList = LinkedList;

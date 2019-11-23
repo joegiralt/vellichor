@@ -2,8 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class LRUCache {
     /**
-     *  creates a LRUCache
-     *  @time {O(1)}
+     *  Creates a LRUCache.
+     *  @time {O(1)
+     *  @param {Object|Number} options object of options or number thats set on this.max.
      */
     constructor(options) {
         if (typeof options === "object") {
@@ -16,8 +17,10 @@ class LRUCache {
         this.size = this.store.size;
     }
     /**
-     *  gets a value from the cache associated with a key
-     *  @time {O(1)}
+     *  Returns a value from the cache associated with a key.
+     *  @time O(1)
+     *  @param {*} key Can be objects or primitive values.
+     *  @return {*} Can be objects and primitive values.
      */
     get(key) {
         const value = this.store.get(key);
@@ -30,7 +33,10 @@ class LRUCache {
     }
     /**
      *  sets a value from the cache associated with a key
-     *  @time {O(1)}
+     *  @time O(1)
+     *  @param {*} key Can be objects or primitive values.
+     *  @param {*} value Can be objects or primitive values.
+     *  @return {LRUCache} this instance
      */
     set(key, value) {
         const oldValue = this.get(key);
@@ -46,7 +52,8 @@ class LRUCache {
     }
     /**
      *  deletes a key value pair from the cache associated with a key
-     *  @time {O(1)}
+     *  @time O(1)
+     *  @return {LRUCache} this instance
      */
     delete(key) {
         this.store.delete(key);
@@ -55,7 +62,8 @@ class LRUCache {
     }
     /**
      *  clears all keys and values from the store and sets size to 0
-     *  @time {O(1)}
+     *  @time O(1)
+     *  @return {LRUCache} this instance
      */
     clear() {
         this.store.clear();
@@ -63,11 +71,12 @@ class LRUCache {
         return this;
     }
     /**
-     *  updates the max capacity of the cache, if the
-     *  max capcity of the cache is less than the current max
+     *  Updates the max capacity of the cache. If the
+     *  max capacity of the cache is less than the current max capacity
      *  and the cache is at max capacity, the cache will shed
-     *  the older items
-     *  @time {O(n)}
+     *  the older items.
+     *  @time O(n)
+     *  @return {LRUCache} this instance
      */
     updateMax(newMax) {
         if (newMax === this.max || this.isZero(newMax) || this.isNegative(newMax)) {
@@ -77,33 +86,37 @@ class LRUCache {
             this.max = newMax;
             return this;
         }
-        this.shedOlderEntries((this.max - newMax) - (this.max - this.size));
+        this.shedOlderEntries(this.max - newMax - (this.max - this.size));
         this.max = newMax;
         return this;
     }
     /**
-     *  checks if value is negative
-     *  @time {O(1)}
+     *  Checks if value is negative
+     *  @private
+     *  @param {number} num A positive or negative integer.
+     *  @time O(1)
+     *  @return {boolean}
      */
     isNegative(num) {
         return Math.sign(num) === -1;
     }
     /**
-     *  checks if value is zero
-     *  @time {O(1)}
+     *  Checks if value is zero
+     *  @private
+     *  @param {number} num A positive or negative integer.
+     *  @time O(1)
+     *  @return {boolean}
      */
     isZero(num) {
         return Math.sign(num) === 0;
     }
     /**
-     *  deletes n oldest entries
-     *  @time {O(n)}
+     *  Deletes n oldest entries where n = numberOfEntries, from the store.
+     *  @private
+     *  @param {number} numberOfEntries Number of older entries to be deleted.
+     *  @time O(n)
      */
     shedOlderEntries(numberOfEntries) {
-        // new Array(numberOfEntries).forEach(_ => {
-        //   const key = this.store.entries().next().value[0];
-        //   this.delete(key);
-        // });
         for (let i = numberOfEntries; i > 0; i--) {
             const key = this.store.entries().next().value[0];
             this.delete(key);

@@ -23,7 +23,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="LinkedList.html">LinkedList</a><ul class='methods'><li data-type='method'><a href="LinkedList.html#append">append</a></li><li data-type='method'><a href="LinkedList.html#asArray">asArray</a></li><li data-type='method'><a href="LinkedList.html#insert">insert</a></li><li data-type='method'><a href="LinkedList.html#prepend">prepend</a></li><li data-type='method'><a href="LinkedList.html#remove">remove</a></li><li data-type='method'><a href="LinkedList.html#reverse">reverse</a></li><li data-type='method'><a href="LinkedList.html#traverseToIndex">traverseToIndex</a></li></ul></li><li><a href="LRUCache.html">LRUCache</a><ul class='methods'><li data-type='method'><a href="LRUCache.html#clear">clear</a></li><li data-type='method'><a href="LRUCache.html#delete">delete</a></li><li data-type='method'><a href="LRUCache.html#get">get</a></li><li data-type='method'><a href="LRUCache.html#isNegative">isNegative</a></li><li data-type='method'><a href="LRUCache.html#isZero">isZero</a></li><li data-type='method'><a href="LRUCache.html#set">set</a></li><li data-type='method'><a href="LRUCache.html#shedOlderEntries">shedOlderEntries</a></li><li data-type='method'><a href="LRUCache.html#updateMax">updateMax</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="LinkedList.html">LinkedList</a><ul class='methods'><li data-type='method'><a href="LinkedList.html#append">append</a></li><li data-type='method'><a href="LinkedList.html#asArray">asArray</a></li><li data-type='method'><a href="LinkedList.html#insert">insert</a></li><li data-type='method'><a href="LinkedList.html#prepend">prepend</a></li><li data-type='method'><a href="LinkedList.html#remove">remove</a></li><li data-type='method'><a href="LinkedList.html#reverse">reverse</a></li><li data-type='method'><a href="LinkedList.html#traverseToIndex">traverseToIndex</a></li></ul></li><li><a href="LRUCache.html">LRUCache</a><ul class='methods'><li data-type='method'><a href="LRUCache.html#clear">clear</a></li><li data-type='method'><a href="LRUCache.html#delete">delete</a></li><li data-type='method'><a href="LRUCache.html#get">get</a></li><li data-type='method'><a href="LRUCache.html#set">set</a></li><li data-type='method'><a href="LRUCache.html#updateMax">updateMax</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -65,7 +65,7 @@ class LinkedList {
      *  Appends a new value to the tail of the LinkedList.
      *  @param {*} value
      *  @time O(1)
-     *  @return this
+     *  @return {LinkedList} this instance.
      */
     append(value) {
         const newNode = new ListNode_1.default(value);
@@ -78,7 +78,7 @@ class LinkedList {
      *  Prepends a new value to the head of the LinkedList.
      *  @param {*} value
      *  @time O(1)
-     *  @return this
+     *  @return {LinkedList} this instance.
      */
     prepend(value) {
         const newNode = new ListNode_1.default(value);
@@ -90,7 +90,7 @@ class LinkedList {
     /**
      *  Maps the values to an array, `head.value` is at the 0th index and the `tail.value` is at the ultimate index.
      *  @time O(n)
-     *  @return {any[]} an array of node values
+     *  @return {any[]} An array of node values.
      */
     asArray() {
         const array = [];
@@ -106,7 +106,7 @@ class LinkedList {
      *  @time O(n)
      *  @param {number} index
      *  @param {any} value
-     *  @return this
+     *  @return {LinkedList} this instance.
      */
     insert(index, value) {
         if (index >= this.size) {
@@ -121,25 +121,10 @@ class LinkedList {
         return this;
     }
     /**
-     *  Traverse to a node at a particular index.
-     *  @time O(n)
-     *  @param {number} index
-     *  @return ListNode
-     */
-    traverseToIndex(index) {
-        let counter = 0;
-        let currentNode = this.head;
-        while (counter !== index) {
-            currentNode = currentNode.next;
-            counter++;
-        }
-        return currentNode;
-    }
-    /**
      *  Removes a node at a particular index.
      *  @param {number} index
      *  @time O(n)
-     *  @return this
+     *  @return {LinkedList} this instance.
      */
     remove(index) {
         const leader = this.traverseToIndex(index - 1);
@@ -151,7 +136,7 @@ class LinkedList {
     /**
      *  Reverse a LinkedList in place.
      *  @time O(n)
-     *  @return this
+     *  @return {LinkedList} this instance.
      */
     reverse() {
         if (!this.head.next) {
@@ -170,6 +155,21 @@ class LinkedList {
         this.head = first;
         return this;
     }
+    /**
+     *  Traverses to a node at a particular index.
+     *  @time O(n)
+     *  @param {number} index
+     *  @return {LinkedNode} List Node is returned
+     */
+    traverseToIndex(index) {
+        let counter = 0;
+        let currentNode = this.head;
+        while (counter !== index) {
+            currentNode = currentNode.next;
+            counter++;
+        }
+        return currentNode;
+    }
 }
 exports.LinkedList = LinkedList;
 //# sourceMappingURL=LinkedList.js.map</code></pre>
@@ -184,7 +184,7 @@ exports.LinkedList = LinkedList;
 <br class="clear">
 
 <footer>
-    Documentation generated at Fri Nov 22 2019 18:37:54 GMT-0500 (Eastern Standard Time)
+    Documentation generated at Fri Nov 22 2019 23:36:45 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script>prettyPrint();</script>
