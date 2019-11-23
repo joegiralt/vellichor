@@ -9,10 +9,10 @@ export class LRUCache {
 
   /**
    *  Creates a LRUCache.
-   *  @time {O(1)
+   *  @time O(1)
    *  @constructs LRUCache
    *  @param {Object|Number} options object of options or number thats set on this.max.
-   *  {@link https://en.wikipedia.org/wiki/Cache_replacement_policies} LRU Cache Strategy - Wikipedia
+   *  {@linkplain https://en.wikipedia.org/wiki/Cache_replacement_policies} LRUCacheStrategy-Wikipedia
    */
   constructor(options: ILRUOptions | number) {
     if (typeof options === "object") {

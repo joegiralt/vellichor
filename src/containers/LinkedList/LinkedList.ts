@@ -10,10 +10,10 @@ export class LinkedList {
 
   /**
    *  Creates a LinkedList.
+   *  @time O(1)
    *  @constructs LinkedList
    *  @param {*} value A value.
-   *  @time O(1)
-   *  {@link https://en.wikipedia.org/wiki/Linked_list} Linked list - Wikipedia
+   *  {@linkplain https://en.wikipedia.org/wiki/Linked_list} Linkedlist-Wikipedia
    */
   constructor(value: any) {
     this.head = new ListNode(value);
