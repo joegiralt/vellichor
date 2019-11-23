@@ -1,7 +1,6 @@
 /**
  *  Implements an LRUCache using the ES6 Map.prototype and not
  *  a custom doubly linked list.
- *  {@link https://en.wikipedia.org/wiki/Cache_replacement_policies} LRU Cache Strategy - Wikipedia
  */
 export class LRUCache {
   public max: number;
@@ -11,6 +10,8 @@ export class LRUCache {
   /**
    *  Creates a LRUCache.
    *  @time {O(1)
+   *  @constructs LRUCache
+   *  {@link https://en.wikipedia.org/wiki/Cache_replacement_policies} LRU Cache Strategy - Wikipedia
    *  @param {Object|Number} options object of options or number thats set on this.max.
    */
   constructor(options: ILRUOptions | number) {
