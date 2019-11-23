@@ -1,6 +1,6 @@
 <p align="center">
-  <img align="center" width="120" height="120" src="https://image.flaticon.com/icons/svg/1472/1472214.svg"><br/>
-  <h2 align="center">Vellichor</h2>
+  <img align="center" width="140" height="140" src="https://image.flaticon.com/icons/svg/1472/1472214.svg"><br/>
+  <h1 align="center">Vellichor</h2>
 </p>
 
 [![Build Status](https://travis-ci.com/joegiralt/vellichor.svg?branch=master)](https://travis-ci.com/joegiralt/vellichor)[![codecov](https://codecov.io/gh/joegiralt/vellichor/branch/master/graph/badge.svg)](https://codecov.io/gh/joegiralt/vellichor)[![Known Vulnerabilities](https://snyk.io/test/github/joegiralt/vellichor/badge.svg)](https://snyk.io/test/github/joegiralt/vellichor)
