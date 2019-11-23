@@ -7,13 +7,13 @@ const ListNode_1 = __importDefault(require("./ListNode"));
 /**
  *  Implements a singly linked list.
  *  @class LinkedList
- *  @link https://en.wikipedia.org/wiki/Linked_list
+ *  @see https://en.wikipedia.org/wiki/Linked_list
  *
  */
 class LinkedList {
     /**
      *  Creates a LinkedList.
-     *  @param {*} value
+     *  @param {*} value A value.
      *  @time O(1)
      */
     constructor(value) {

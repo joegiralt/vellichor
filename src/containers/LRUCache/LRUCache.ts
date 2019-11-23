@@ -62,7 +62,7 @@ export class LRUCache {
    *  @time O(1)
    *  @return {LRUCache} this instance
    */
-  public delete(key: any): this {
+  public delete(key: any): LRUCache {
     this.store.delete(key);
     this.size = this.store.size;
     return this;
@@ -73,7 +73,7 @@ export class LRUCache {
    *  @time O(1)
    *  @return {LRUCache} this instance
    */
-  public clear(): this {
+  public clear(): LRUCache {
     this.store.clear();
     this.size = this.store.size;
     return this;
@@ -85,9 +85,10 @@ export class LRUCache {
    *  and the cache is at max capacity, the cache will shed
    *  the older items.
    *  @time O(n)
-   *  @return {LRUCache} this instance
+   *  @param {number} newMax The value that will be the new max capacity for the cache.
+   *  @return {LRUCache} This instance.
    */
-  public updateMax(newMax: number): this {
+  public updateMax(newMax: number): LRUCache {
     if (newMax === this.max || this.isZero(newMax) || this.isNegative(newMax)) {
       return this;
     }
@@ -117,7 +118,7 @@ export class LRUCache {
    *  @private
    *  @param {number} num A positive or negative integer.
    *  @time O(1)
-   *  @return {boolean}
+   *  @return {boolean} boolean
    */
   private isZero(num: number): boolean {
     return Math.sign(num) === 0;

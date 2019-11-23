@@ -76,7 +76,8 @@ class LRUCache {
      *  and the cache is at max capacity, the cache will shed
      *  the older items.
      *  @time O(n)
-     *  @return {LRUCache} this instance
+     *  @param {number} newMax The value that will be the new max capacity for the cache.
+     *  @return {LRUCache} This instance.
      */
     updateMax(newMax) {
         if (newMax === this.max || this.isZero(newMax) || this.isNegative(newMax)) {
@@ -105,7 +106,7 @@ class LRUCache {
      *  @private
      *  @param {number} num A positive or negative integer.
      *  @time O(1)
-     *  @return {boolean}
+     *  @return {boolean} boolean
      */
     isZero(num) {
         return Math.sign(num) === 0;
