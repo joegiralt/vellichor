@@ -1,5 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ *  Implements an LRUCache using the ES6 Map.prototype and not
+ *  a custom doubly linked list.
+ *  {@link https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)} LRU Cache Strategy - Wikipedia
+ *  {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/prototype} MDN Map.prototype
+ */
 class LRUCache {
     /**
      *  Creates a LRUCache.
