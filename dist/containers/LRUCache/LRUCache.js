@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  *  Implements an LRUCache using the ES6 Map.prototype and not
  *  a custom doubly linked list.
+ *  {@link https://en.wikipedia.org/wiki/Cache_replacement_policies Wikipedia}
  */
 class LRUCache {
     /**
@@ -10,7 +11,6 @@ class LRUCache {
      *  @time O(1)
      *  @constructs LRUCache
      *  @param {Object|Number} options object of options or number thats set on this.max.
-     *  {@link https://en.wikipedia.org/wiki/Cache_replacement_policies LRUCacheStrategy-Wikipedia}
      */
     constructor(options) {
         if (typeof options === "object") {

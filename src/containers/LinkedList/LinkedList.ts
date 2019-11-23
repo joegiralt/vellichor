@@ -1,7 +1,7 @@
 import ListNode from "./ListNode";
 /**
  *  Implements a singly linked list.
- *
+ *  {@link https://en.wikipedia.org/wiki/Linked_list Wikipedia}
  */
 export class LinkedList {
   public head: ListNode | null;
@@ -13,7 +13,6 @@ export class LinkedList {
    *  @time O(1)
    *  @constructs LinkedList
    *  @param {*} value A value.
-   *  {@link https://en.wikipedia.org/wiki/Linked_list Linkedlist-Wikipedia}
    */
   constructor(value: any) {
     this.head = new ListNode(value);
