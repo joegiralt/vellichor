@@ -1,11 +1,7 @@
-interface ILRUOptions {
-  max: number;
-}
-
 /**
  *  Implements an LRUCache using the ES6 Map.prototype and not
  *  a custom doubly linked list.
- *  {@link https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)} LRU Cache Strategy - Wikipedia
+ *  {@link https://en.wikipedia.org/wiki/Cache_replacement_policies} LRU Cache Strategy - Wikipedia
  */
 export class LRUCache {
   public max: number;
@@ -142,4 +138,8 @@ export class LRUCache {
       this.delete(key);
     }
   }
+}
+
+interface ILRUOptions {
+  max: number;
 }
