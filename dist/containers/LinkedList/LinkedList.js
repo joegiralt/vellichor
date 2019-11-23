@@ -13,8 +13,8 @@ class LinkedList {
      *  Creates a LinkedList.
      *  @constructs LinkedList
      *  @param {*} value A value.
-     *  {@link https://en.wikipedia.org/wiki/Linked_list} Linked list - Wikipedia
      *  @time O(1)
+     *  {@link https://en.wikipedia.org/wiki/Linked_list} Linked list - Wikipedia
      */
     constructor(value) {
         this.head = new ListNode_1.default(value);
