@@ -13,7 +13,7 @@ export class LinkedList {
    *  @time O(1)
    *  @constructs LinkedList
    *  @param {*} value A value.
-   *  {@linkplain https://en.wikipedia.org/wiki/Linked_list} Linkedlist-Wikipedia
+   *  {@link https://en.wikipedia.org/wiki/Linked_list Linkedlist-Wikipedia}
    */
   constructor(value: any) {
     this.head = new ListNode(value);

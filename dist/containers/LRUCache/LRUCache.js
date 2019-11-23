@@ -10,7 +10,7 @@ class LRUCache {
      *  @time O(1)
      *  @constructs LRUCache
      *  @param {Object|Number} options object of options or number thats set on this.max.
-     *  {@linkplain https://en.wikipedia.org/wiki/Cache_replacement_policies} LRUCacheStrategy-Wikipedia
+     *  {@link https://en.wikipedia.org/wiki/Cache_replacement_policies LRUCacheStrategy-Wikipedia}
      */
     constructor(options) {
         if (typeof options === "object") {
