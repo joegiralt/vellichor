@@ -1,5 +1,5 @@
 import { chance } from "jest-chance";
-import  LinkedList  from "../LinkedList/LinkedList";
+import LinkedList from "../LinkedList/LinkedList";
 
 test("LinkedList, when initiated,  has correct value and size", () => {
   const someValue = chance.integer();
@@ -12,21 +12,21 @@ test("LinkedList, when initiated,  has correct value and size", () => {
 
 test("LinkedList can be appended to", () => {
   const initValue = `init value ${chance.integer()}`;
-  const valueToBeAppened = `appended value ${chance.integer()}`;
+  const valueToBeAppended = `appended value ${chance.integer()}`;
   const currentLinkedList = new LinkedList(initValue);
   expect(currentLinkedList.tail.value).toBe(initValue);
-  currentLinkedList.append(valueToBeAppened);
-  expect(currentLinkedList.tail.value).toBe(valueToBeAppened);
+  currentLinkedList.append(valueToBeAppended);
+  expect(currentLinkedList.tail.value).toBe(valueToBeAppended);
   expect(currentLinkedList.size).toBe(2);
 });
 
 test("LinkedList can be prepended", () => {
   const initValue = `Init value ${chance.integer()}`;
-  const valueToBePrepened = `appended value ${chance.integer()}`;
+  const valueToBePrepended = `appended value ${chance.integer()}`;
   const currentLinkedList = new LinkedList(initValue);
   expect(currentLinkedList.tail.value).toBe(initValue);
-  currentLinkedList.prepend(valueToBePrepened);
-  expect(currentLinkedList.head.value).toBe(valueToBePrepened);
+  currentLinkedList.prepend(valueToBePrepended);
+  expect(currentLinkedList.head.value).toBe(valueToBePrepended);
   expect(currentLinkedList.size).toBe(2);
 });
 
@@ -114,7 +114,7 @@ test("LinkedList reversed empty does nothing", () => {
   expect(currentLinkedList.reverse()).toBe(currentLinkedList);
 });
 
-test("LinkedList append value is still appened if target index is too high", () => {
+test("LinkedList append value is still appended if target index is too high", () => {
   const currentLinkedList = new LinkedList("HI");
   const newValue = "bye";
   currentLinkedList.insert(1000000, newValue);

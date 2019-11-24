@@ -3,7 +3,7 @@ import LRUCache from "../LRUCache/LRUCache";
 
 test("get and set a value", () => {
   const lruCache = new LRUCache(10);
-  const value = "ayyyeee!";
+  const value = "amylene!";
   lruCache.set("a", value);
   expect(lruCache.get("a")).toBe(value);
   expect(lruCache.max).toEqual(10);
