@@ -23,7 +23,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="LinkedList.html">LinkedList</a><ul class='methods'><li data-type='method'><a href="LinkedList.html#append">append</a></li><li data-type='method'><a href="LinkedList.html#asArray">asArray</a></li><li data-type='method'><a href="LinkedList.html#insert">insert</a></li><li data-type='method'><a href="LinkedList.html#prepend">prepend</a></li><li data-type='method'><a href="LinkedList.html#remove">remove</a></li><li data-type='method'><a href="LinkedList.html#reverse">reverse</a></li><li data-type='method'><a href="LinkedList.html#traverseToIndex">traverseToIndex</a></li></ul></li><li><a href="LRUCache.html">LRUCache</a><ul class='methods'><li data-type='method'><a href="LRUCache.html#clear">clear</a></li><li data-type='method'><a href="LRUCache.html#delete">delete</a></li><li data-type='method'><a href="LRUCache.html#get">get</a></li><li data-type='method'><a href="LRUCache.html#set">set</a></li><li data-type='method'><a href="LRUCache.html#updateMax">updateMax</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DoubleEndedQueue.html">DoubleEndedQueue</a><ul class='methods'><li data-type='method'><a href="DoubleEndedQueue.html#clear">clear</a></li><li data-type='method'><a href="DoubleEndedQueue.html#get">get</a></li><li data-type='method'><a href="DoubleEndedQueue.html#isEmpty">isEmpty</a></li><li data-type='method'><a href="DoubleEndedQueue.html#peek">peek</a></li><li data-type='method'><a href="DoubleEndedQueue.html#peekAt">peekAt</a></li><li data-type='method'><a href="DoubleEndedQueue.html#peekBack">peekBack</a></li><li data-type='method'><a href="DoubleEndedQueue.html#peekFront">peekFront</a></li><li data-type='method'><a href="DoubleEndedQueue.html#pop">pop</a></li><li data-type='method'><a href="DoubleEndedQueue.html#push">push</a></li><li data-type='method'><a href="DoubleEndedQueue.html#remove">remove</a></li><li data-type='method'><a href="DoubleEndedQueue.html#removeOne">removeOne</a></li><li data-type='method'><a href="DoubleEndedQueue.html#shift">shift</a></li><li data-type='method'><a href="DoubleEndedQueue.html#size">size</a></li><li data-type='method'><a href="DoubleEndedQueue.html#splice">splice</a></li><li data-type='method'><a href="DoubleEndedQueue.html#toArray">toArray</a></li><li data-type='method'><a href="DoubleEndedQueue.html#unshift">unshift</a></li></ul></li><li><a href="LinkedList.html">LinkedList</a><ul class='methods'><li data-type='method'><a href="LinkedList.html#append">append</a></li><li data-type='method'><a href="LinkedList.html#asArray">asArray</a></li><li data-type='method'><a href="LinkedList.html#insert">insert</a></li><li data-type='method'><a href="LinkedList.html#prepend">prepend</a></li><li data-type='method'><a href="LinkedList.html#remove">remove</a></li><li data-type='method'><a href="LinkedList.html#reverse">reverse</a></li><li data-type='method'><a href="LinkedList.html#traverseToIndex">traverseToIndex</a></li></ul></li><li><a href="LRUCache.html">LRUCache</a><ul class='methods'><li data-type='method'><a href="LRUCache.html#clear">clear</a></li><li data-type='method'><a href="LRUCache.html#delete">delete</a></li><li data-type='method'><a href="LRUCache.html#get">get</a></li><li data-type='method'><a href="LRUCache.html#set">set</a></li><li data-type='method'><a href="LRUCache.html#updateMax">updateMax</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -79,7 +79,7 @@ class LRUCache {
         return value;
     }
     /**
-     *  sets a value from the cache associated with a key
+     *  Sets a key and its value in the cache at the most recent position/last index
      *  @time O(1)
      *  @param {*} key Can be objects or primitive values.
      *  @param {*} value Can be objects or primitive values.
@@ -89,7 +89,6 @@ class LRUCache {
         const oldValue = this.get(key);
         if (oldValue === undefined) {
             if (this.store.size === this.max) {
-                console.log("size, max", this.store.size, this.max);
                 this.store.delete(this.store.entries().next().value[0]);
             }
             this.store.set(key, value);
@@ -98,7 +97,7 @@ class LRUCache {
         return this;
     }
     /**
-     *  deletes a key value pair from the cache associated with a key
+     *  Deletes a key/value pair from any where in the cache.
      *  @time O(1)
      *  @return {LRUCache} this instance
      */
@@ -171,7 +170,7 @@ class LRUCache {
         }
     }
 }
-exports.LRUCache = LRUCache;
+exports.default = LRUCache;
 //# sourceMappingURL=LRUCache.js.map</code></pre>
         </article>
     </section>
@@ -184,7 +183,7 @@ exports.LRUCache = LRUCache;
 <br class="clear">
 
 <footer>
-    Documentation generated at Sat Nov 23 2019 01:33:07 GMT-0500 (Eastern Standard Time)
+    Documentation generated at Sun Nov 24 2019 09:29:09 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script>prettyPrint();</script>

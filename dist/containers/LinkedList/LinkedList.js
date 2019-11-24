@@ -131,5 +131,5 @@ class LinkedList {
         return currentNode;
     }
 }
-exports.LinkedList = LinkedList;
+exports.default = LinkedList;
 //# sourceMappingURL=LinkedList.js.map

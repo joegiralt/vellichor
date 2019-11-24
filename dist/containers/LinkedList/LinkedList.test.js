@@ -1,10 +1,13 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const jest_chance_1 = require("jest-chance");
-const LinkedList_1 = require("../LinkedList/LinkedList");
+const LinkedList_1 = __importDefault(require("../LinkedList/LinkedList"));
 test("LinkedList, when initiated,  has correct value and size", () => {
     const someValue = jest_chance_1.chance.integer();
-    const currentLinkedList = new LinkedList_1.LinkedList(someValue);
+    const currentLinkedList = new LinkedList_1.default(someValue);
     expect(currentLinkedList.head.value).toBe(someValue);
     expect(currentLinkedList.tail.value).toBe(someValue);
     expect(currentLinkedList.tail).toBe(currentLinkedList.head);
@@ -13,7 +16,7 @@ test("LinkedList, when initiated,  has correct value and size", () => {
 test("LinkedList can be appended to", () => {
     const initValue = `init value ${jest_chance_1.chance.integer()}`;
     const valueToBeAppened = `appended value ${jest_chance_1.chance.integer()}`;
-    const currentLinkedList = new LinkedList_1.LinkedList(initValue);
+    const currentLinkedList = new LinkedList_1.default(initValue);
     expect(currentLinkedList.tail.value).toBe(initValue);
     currentLinkedList.append(valueToBeAppened);
     expect(currentLinkedList.tail.value).toBe(valueToBeAppened);
@@ -22,7 +25,7 @@ test("LinkedList can be appended to", () => {
 test("LinkedList can be prepended", () => {
     const initValue = `Init value ${jest_chance_1.chance.integer()}`;
     const valueToBePrepened = `appended value ${jest_chance_1.chance.integer()}`;
-    const currentLinkedList = new LinkedList_1.LinkedList(initValue);
+    const currentLinkedList = new LinkedList_1.default(initValue);
     expect(currentLinkedList.tail.value).toBe(initValue);
     currentLinkedList.prepend(valueToBePrepened);
     expect(currentLinkedList.head.value).toBe(valueToBePrepened);
@@ -32,7 +35,7 @@ test("LinkedList can be represented as an Array", () => {
     const headValue = `head value ${jest_chance_1.chance.integer()}`;
     const middleValue = `middle  value ${jest_chance_1.chance.integer()}`;
     const lastValue = ` last value ${jest_chance_1.chance.integer()}`;
-    const currentLinkedList = new LinkedList_1.LinkedList(headValue);
+    const currentLinkedList = new LinkedList_1.default(headValue);
     currentLinkedList.append(middleValue);
     currentLinkedList.append(lastValue);
     const asArray = currentLinkedList.asArray();
@@ -42,7 +45,7 @@ test("LinkedList can be represented as an Array", () => {
 test("LinkedList can have a value inserted at a particular index", () => {
     const headValue = `head value ${jest_chance_1.chance.integer()}`;
     const valueToBeInserted = `inserted value ${jest_chance_1.chance.integer()}`;
-    const currentLinkedList = new LinkedList_1.LinkedList(headValue);
+    const currentLinkedList = new LinkedList_1.default(headValue);
     const wordListLength = jest_chance_1.chance.integer({ min: 5, max: 20 });
     const insertionIndex = jest_chance_1.chance.integer({ min: 2, max: wordListLength });
     const words = jest_chance_1.chance.sentence({ words: wordListLength }).split(" ");
@@ -54,7 +57,7 @@ test("LinkedList can have a value inserted at a particular index", () => {
 });
 test("LinkedList can have a value removed at a particular index", () => {
     const headValue = `head value ${jest_chance_1.chance.integer()}`;
-    const currentLinkedList = new LinkedList_1.LinkedList(headValue);
+    const currentLinkedList = new LinkedList_1.default(headValue);
     const wordListLength = jest_chance_1.chance.integer({ min: 10, max: 20 });
     const removeIndex = jest_chance_1.chance.integer({ min: 7, max: wordListLength });
     const words = jest_chance_1.chance.sentence({ words: wordListLength }).split(" ");
@@ -68,7 +71,7 @@ test("LinkedList can be reversed", () => {
     const wordListLength = jest_chance_1.chance.integer({ min: 5, max: 20 });
     const words = jest_chance_1.chance.sentence({ words: wordListLength }).split(" ");
     const [firstWord, ...rest] = words;
-    const currentLinkedList = new LinkedList_1.LinkedList(firstWord);
+    const currentLinkedList = new LinkedList_1.default(firstWord);
     rest.forEach((word) => currentLinkedList.append(word));
     expect(words.reverse().toString()).toEqual(currentLinkedList
         .reverse()
@@ -78,7 +81,7 @@ test("LinkedList can be reversed", () => {
 test("LinkedList can traverse to a particular index", () => {
     const headValue = `head value ${jest_chance_1.chance.integer()}`;
     const valueToBeInserted = `inserted value ${jest_chance_1.chance.integer()}`;
-    const currentLinkedList = new LinkedList_1.LinkedList(headValue);
+    const currentLinkedList = new LinkedList_1.default(headValue);
     const wordListLength = jest_chance_1.chance.integer({ min: 5, max: 20 });
     const insertionIndex = jest_chance_1.chance.integer({ min: 2, max: wordListLength });
     const words = jest_chance_1.chance.sentence({ words: wordListLength }).split(" ");
@@ -89,11 +92,11 @@ test("LinkedList can traverse to a particular index", () => {
     expect(listNode.value).toBe(valueToBeInserted);
 });
 test("LinkedList reversed empty does nothing", () => {
-    const currentLinkedList = new LinkedList_1.LinkedList("HI");
+    const currentLinkedList = new LinkedList_1.default("HI");
     expect(currentLinkedList.reverse()).toBe(currentLinkedList);
 });
 test("LinkedList append value is still appened if target index is too high", () => {
-    const currentLinkedList = new LinkedList_1.LinkedList("HI");
+    const currentLinkedList = new LinkedList_1.default("HI");
     const newValue = "bye";
     currentLinkedList.insert(1000000, newValue);
     expect(currentLinkedList.tail.value).toBe(newValue);

@@ -4,7 +4,7 @@ import ListNode from "./ListNode";
  *
  *  {@link https://en.wikipedia.org/wiki/Linked_list Linked List on Wikipedia}
  */
-export class LinkedList {
+class LinkedList {
   public head: ListNode | null;
   public tail: ListNode | null;
   public size: number;
@@ -141,3 +141,5 @@ export class LinkedList {
     return currentNode;
   }
 }
+
+export default LinkedList;

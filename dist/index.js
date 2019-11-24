@@ -1,7 +1,9 @@
 "use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
 Object.defineProperty(exports, "__esModule", { value: true });
-var LinkedList_1 = require("./containers/LinkedList/LinkedList");
-exports.LinkedList = LinkedList_1.LinkedList;
-var LRUCache_1 = require("./containers/LRUCache/LRUCache");
-exports.LRUCache = LRUCache_1.LRUCache;
+__export(require("./containers/LinkedList/LinkedList"));
+__export(require("./containers/LRUCache/LRUCache"));
+__export(require("./containers/DoubleEndedQueue/DoubleEndedQueue"));
 //# sourceMappingURL=index.js.map

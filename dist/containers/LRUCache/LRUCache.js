@@ -39,7 +39,7 @@ class LRUCache {
         return value;
     }
     /**
-     *  sets a value from the cache associated with a key
+     *  Sets a key and its value in the cache at the most recent position/last index
      *  @time O(1)
      *  @param {*} key Can be objects or primitive values.
      *  @param {*} value Can be objects or primitive values.
@@ -49,7 +49,6 @@ class LRUCache {
         const oldValue = this.get(key);
         if (oldValue === undefined) {
             if (this.store.size === this.max) {
-                console.log("size, max", this.store.size, this.max);
                 this.store.delete(this.store.entries().next().value[0]);
             }
             this.store.set(key, value);
@@ -58,7 +57,7 @@ class LRUCache {
         return this;
     }
     /**
-     *  deletes a key value pair from the cache associated with a key
+     *  Deletes a key/value pair from any where in the cache.
      *  @time O(1)
      *  @return {LRUCache} this instance
      */
@@ -131,5 +130,5 @@ class LRUCache {
         }
     }
 }
-exports.LRUCache = LRUCache;
+exports.default = LRUCache;
 //# sourceMappingURL=LRUCache.js.map

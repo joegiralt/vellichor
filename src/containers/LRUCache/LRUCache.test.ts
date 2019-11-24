@@ -1,5 +1,5 @@
 import { chance } from "jest-chance";
-import { LRUCache } from "../LRUCache/LRUCache";
+import LRUCache from "../LRUCache/LRUCache";
 
 test("get and set a value", () => {
   const lruCache = new LRUCache(10);

@@ -4,7 +4,8 @@
   "jsRules": {},
   "rules": {
     "no-console": false,
-    "prefer-const": true
+    "prefer-const": true,
+    "no-bitwise": false
   },
   "rulesDirectory": []
 }

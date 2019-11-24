@@ -1,5 +1,5 @@
 import { chance } from "jest-chance";
-import { LinkedList } from "../LinkedList/LinkedList";
+import  LinkedList  from "../LinkedList/LinkedList";
 
 test("LinkedList, when initiated,  has correct value and size", () => {
   const someValue = chance.integer();
