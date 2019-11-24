@@ -314,7 +314,7 @@ class DoubleEndedQueue {
      * @param {...*} [elements]
      * @returns {array}
      */
-    splice(index, count) {
+    splice(index, count, ...extraArgs) {
         let idx = index;
         // expect a number or return undefined
         if (idx !== (idx | 0)) {
@@ -327,13 +327,13 @@ class DoubleEndedQueue {
         if (idx > size) {
             return void 0;
         }
-        if (arguments.length > 2) {
+        if (extraArgs.length > 0) {
             let k;
             let temp;
             let removed;
-            let argumentsLength = arguments.length;
+            let argumentsLength = extraArgs.length;
             const len = this.list.length;
-            let argumentsIndex = 2;
+            let argumentsIndex = 0;
             if (!size || idx < size / 2) {
                 temp = new Array(idx);
                 for (k = 0; k < idx; k++) {
@@ -350,7 +350,7 @@ class DoubleEndedQueue {
                     this.head = (this.head + idx + len) & this.capacityMask;
                 }
                 while (argumentsLength > argumentsIndex) {
-                    this.unshift(arguments[--argumentsLength]);
+                    this.unshift(extraArgs[--argumentsLength]);
                 }
                 for (k = idx; k > 0; k--) {
                     this.unshift(temp[k - 1]);
@@ -373,7 +373,7 @@ class DoubleEndedQueue {
                     this.tail = (this.tail - tempLength + len) & this.capacityMask;
                 }
                 while (argumentsIndex < argumentsLength) {
-                    this.push(arguments[argumentsIndex++]);
+                    this.push(extraArgs[argumentsIndex++]);
                 }
                 for (k = 0; k < tempLength; k++) {
                     this.push(temp[k]);
