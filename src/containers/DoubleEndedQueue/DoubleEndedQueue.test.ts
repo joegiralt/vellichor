@@ -1,7 +1,7 @@
 import DoubleEndedQueue from "../DoubleEndedQueue/DoubleEndedQueue";
 
 describe("DoubleEndedQueue.constructor", () => {
-  it("should take no argument", () => {
+  it("Should take no argument", () => {
     const a = new DoubleEndedQueue();
     expect(a.capacityMask).toEqual(3);
     expect(a.list.length).toEqual(4);
@@ -9,7 +9,7 @@ describe("DoubleEndedQueue.constructor", () => {
     expect(a.length).toEqual(0);
   });
 
-  it("should take array argument", () => {
+  it("Should take array argument", () => {
     const a = new DoubleEndedQueue([1, 2, 3, 4]);
     const b = new DoubleEndedQueue([]);
 
@@ -19,7 +19,7 @@ describe("DoubleEndedQueue.constructor", () => {
     expect(b.toArray()).toEqual([]);
   });
 
-  it("should handle a high volume with no out of memory exception", () => {
+  it("Should handle a high volume with no out of memory exception", () => {
     const denque = new DoubleEndedQueue([]);
     let l = 250000;
 
@@ -61,7 +61,7 @@ describe("DoubleEndedQueue.constructor", () => {
 });
 
 describe("DoubleEndedQueue.toArray", () => {
-  it("should return an array", () => {
+  it("Should return an array", () => {
     const a = new DoubleEndedQueue([1, 2, 3, 4]);
     expect(a.toArray()).toEqual([1, 2, 3, 4]);
   });
@@ -414,7 +414,7 @@ describe("DoubleEndedQueue.shift", () => {
 });
 
 describe("DoubleEndedQueue.get", () => {
-  it("should return undefined on nonsensical argument", () => {
+  it("Should return undefined on nonsensical argument", () => {
     const a = new DoubleEndedQueue([1, 2, 3, 4]);
     expect(a.get(-5)).toEqual(void 0);
     expect(a.get(-100)).toEqual(void 0);
@@ -426,7 +426,7 @@ describe("DoubleEndedQueue.get", () => {
     expect(a.get(4)).toEqual(void 0);
   });
 
-  it("should support positive indexing", () => {
+  it("Should support positive indexing", () => {
     const a = new DoubleEndedQueue([1, 2, 3, 4]);
     expect(a.get(0)).toEqual(1);
     expect(a.get(1)).toEqual(2);
@@ -434,7 +434,7 @@ describe("DoubleEndedQueue.get", () => {
     expect(a.get(3)).toEqual(4);
   });
 
-  it("should support negative indexing", () => {
+  it("Should support negative indexing", () => {
     const a = new DoubleEndedQueue([1, 2, 3, 4]);
     expect(a.get(-1)).toEqual(4);
     expect(a.get(-2)).toEqual(3);
@@ -444,12 +444,12 @@ describe("DoubleEndedQueue.get", () => {
 });
 
 describe("DoubleEndedQueue.isEmpty", () => {
-  it("should return true on empty denque", () => {
+  it("Should return true on empty denque", () => {
     const a = new DoubleEndedQueue();
     expect(a.isEmpty()).toBeTruthy();
   });
 
-  it("should return false on denque with items", () => {
+  it("Should return false on denque with items", () => {
     const a = new DoubleEndedQueue([1]);
     expect(a.isEmpty()).toBeFalsy();
   });
@@ -464,7 +464,7 @@ describe("DoubleEndedQueue.peekFront", () => {
     expect(a.length).toEqual(0);
   });
 
-  it("should return the item at the front of the denque", () => {
+  it("Should return the item at the front of the denque", () => {
     const a = new DoubleEndedQueue([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     expect(a.peekFront() === 1);
 
@@ -488,7 +488,7 @@ describe("DoubleEndedQueue.peekBack", () => {
     expect(a.length).toEqual(0);
   });
 
-  it("should return the item at the back of the denque", () => {
+  it("Should return the item at the back of the denque", () => {
     const a = new DoubleEndedQueue([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     expect(a.peekBack()).toEqual(9);
 
@@ -504,7 +504,7 @@ describe("DoubleEndedQueue.peekBack", () => {
 });
 
 describe("DoubleEndedQueue.clear", () => {
-  it("should clear the denque", () => {
+  it("Should clear the denque", () => {
     const a = new DoubleEndedQueue([1, 2, 3, 4]);
     expect(a.isEmpty()).toBeFalsy();
     a.clear();
@@ -530,7 +530,7 @@ describe("DoubleEndedQueue.remove", () => {
     expect(a.length).toEqual(0);
   });
 
-  it("remove from the end of the queue if a negative index is provided", () => {
+  it("Should allow removal from the end of the queue if a negative index is provided", () => {
     const q = new DoubleEndedQueue();
     q.push(1); // 1
     q.push(2); // 2
@@ -907,7 +907,7 @@ describe("DoubleEndedQueue.splice", () => {
     expect(b.toArray()).toEqual([1]);
   });
 
-  it("pop should shrink array when mostly empty", () => {
+  it("Should all pop to shrink array when mostly empty", () => {
     const a = new DoubleEndedQueue();
     for (let i = 0; i < 50000; i++) {
       a.push(i);
