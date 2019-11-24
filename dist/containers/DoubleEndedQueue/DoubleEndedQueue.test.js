@@ -756,7 +756,7 @@ describe("DoubleEndedQueue.splice", () => {
         a.splice(21, 0, 1, 2, 3, 4, 5, 6);
         b.splice(21, 0, 1, 2, 3, 4, 5, 6);
         expect(a.toArray()).toEqual(b);
-        expect(a.splice(a.length - 1, 2)).toEqual(b.splice(b.length - 1, 2)); //remove
+        expect(a.splice(a.length - 1, 2)).toEqual(b.splice(b.length - 1, 2)); // remove
         expect(a.toArray()).toEqual(b);
     });
     it("Should remove and add items like native splice method somewhere in the middle of denque", () => {

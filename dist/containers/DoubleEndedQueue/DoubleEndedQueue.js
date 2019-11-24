@@ -2,6 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Custom implementation of a double ended queue.
+ * Every queue operation is done at a constant O(1) - including random access from .peekAt(index).
+ * It May also be used as a stack or a regular queue.
+ * {@link https://en.wikipedia.org/wiki/Double-ended_queue Double-ended queue on Wikipedia}
+ * {@link https://en.wikipedia.org/wiki/Queue_(abstract_data_type) Queue (abstract data type) on Wikipedia}
+ * {@link https://en.wikipedia.org/wiki/Stack_(abstract_data_type) Stack (abstract data type) on Wikipedia}
  */
 class DoubleEndedQueue {
     constructor(array = []) {

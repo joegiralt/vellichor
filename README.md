@@ -5,7 +5,6 @@
 
 [![Build Status](https://travis-ci.com/joegiralt/vellichor.svg?branch=master)](https://travis-ci.com/joegiralt/vellichor)[![codecov](https://codecov.io/gh/joegiralt/vellichor/branch/master/graph/badge.svg)](https://codecov.io/gh/joegiralt/vellichor)[![Known Vulnerabilities](https://snyk.io/test/github/joegiralt/vellichor/badge.svg)](https://snyk.io/test/github/joegiralt/vellichor)[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
-
 A useful collection of **fast and lightweight** data structures and their algorithms. All implementations are done with **zero dependencies**
 
 Works on all node versions >= v0.10.
@@ -16,9 +15,9 @@ Works on all node versions >= v0.10.
 
 # Implementations/API
 
+- Double Ended Queue
 - (Singly) Linked List
 - LRU Cache
-- Double Ended Queue (Todo)
 - Heap Queue (Todo)
 
 [Full API Docs here](https://joegiralt.github.io/vellichor/index.html)
