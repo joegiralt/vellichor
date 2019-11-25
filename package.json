@@ -9,7 +9,12 @@
     "prepare": "npm run test && npm run build",
     "test": "jest --coverage",
     "lint": "tslint 'src/**/*.ts'",
-    "docs": "tsc && node_modules/.bin/jsdoc -c jsdocconfig.json -t node_modules/postman-jsdoc-theme dist/**/* README.md -d docs"
+    "docs": "tsc && node_modules/.bin/jsdoc -c jsdocconfig.json -t node_modules/postman-jsdoc-theme dist/**/* README.md -d docs",
+    "benchmark_thousand": "node benchmark/thousand",
+    "benchmark_2mil": "ts-node benchmark/DoubleEndedQueue/two_million.ts",
+    "benchmark_splice": "ts-node benchmark/DoubleEndedQueue/splice.ts",
+    "benchmark_remove": "ts-node benchmark/DoubleEndedQueue/remove.ts",
+    "benchmark_removeOne": "ts-node benchmark/DoubleEndedQueue/removeOne.ts"
   },
   "repository": {
     "type": "git",
@@ -22,9 +27,13 @@
   },
   "homepage": "https://github.com/joegiralt/vellichor#readme",
   "devDependencies": {
+    "@types/benchmark": "^1.0.31",
     "@types/chance": "^1.0.7",
     "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.12",
+    "benchmark": "^2.1.4",
     "codecov": "^3.6.1",
+    "denque": "^1.4.1",
     "fast-check": "^1.18.1",
     "jest": "^24.9.0",
     "jest-chance": "^0.1.8",
@@ -37,6 +46,5 @@
   },
   "jest": {
     "globalSetup": "jest-chance"
-  },
-  "dependencies": {}
+  }
 }

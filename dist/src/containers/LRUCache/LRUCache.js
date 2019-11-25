@@ -1,44 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>LRUCache/LRUCache.js - Postman Documentation</title>
-
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/ionicons.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
-</head>
-<body>
-
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger" class="navicon-button x">
-  <div class="navicon"></div>
-</label>
-
-<label for="nav-trigger" class="overlay"></label>
-
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DoubleEndedQueue.html">DoubleEndedQueue</a><ul class='methods'><li data-type='method'><a href="DoubleEndedQueue.html#clear">clear</a></li><li data-type='method'><a href="DoubleEndedQueue.html#get">get</a></li><li data-type='method'><a href="DoubleEndedQueue.html#isEmpty">isEmpty</a></li><li data-type='method'><a href="DoubleEndedQueue.html#peek">peek</a></li><li data-type='method'><a href="DoubleEndedQueue.html#peekAt">peekAt</a></li><li data-type='method'><a href="DoubleEndedQueue.html#peekBack">peekBack</a></li><li data-type='method'><a href="DoubleEndedQueue.html#peekFront">peekFront</a></li><li data-type='method'><a href="DoubleEndedQueue.html#pop">pop</a></li><li data-type='method'><a href="DoubleEndedQueue.html#push">push</a></li><li data-type='method'><a href="DoubleEndedQueue.html#remove">remove</a></li><li data-type='method'><a href="DoubleEndedQueue.html#removeOne">removeOne</a></li><li data-type='method'><a href="DoubleEndedQueue.html#shift">shift</a></li><li data-type='method'><a href="DoubleEndedQueue.html#size">size</a></li><li data-type='method'><a href="DoubleEndedQueue.html#splice">splice</a></li><li data-type='method'><a href="DoubleEndedQueue.html#toArray">toArray</a></li><li data-type='method'><a href="DoubleEndedQueue.html#unshift">unshift</a></li></ul></li><li><a href="LinkedList.html">LinkedList</a><ul class='methods'><li data-type='method'><a href="LinkedList.html#append">append</a></li><li data-type='method'><a href="LinkedList.html#asArray">asArray</a></li><li data-type='method'><a href="LinkedList.html#insert">insert</a></li><li data-type='method'><a href="LinkedList.html#prepend">prepend</a></li><li data-type='method'><a href="LinkedList.html#remove">remove</a></li><li data-type='method'><a href="LinkedList.html#reverse">reverse</a></li><li data-type='method'><a href="LinkedList.html#traverseToIndex">traverseToIndex</a></li></ul></li><li><a href="LRUCache.html">LRUCache</a><ul class='methods'><li data-type='method'><a href="LRUCache.html#clear">clear</a></li><li data-type='method'><a href="LRUCache.html#delete">delete</a></li><li data-type='method'><a href="LRUCache.html#get">get</a></li><li data-type='method'><a href="LRUCache.html#set">set</a></li><li data-type='method'><a href="LRUCache.html#updateMax">updateMax</a></li></ul></li></ul>
-</nav>
-
-<div id="main">
-    
-    <h1 class="page-title">LRUCache/LRUCache.js</h1>
-    
-
-    
-
-
-
-    
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>"use strict";
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  *  Implements an LRUCache using the ES6 Map.prototype and not
@@ -171,22 +131,4 @@ class LRUCache {
     }
 }
 exports.default = LRUCache;
-//# sourceMappingURL=LRUCache.js.map</code></pre>
-        </article>
-    </section>
-
-
-
-
-</div>
-
-<br class="clear">
-
-<footer>
-    Documentation generated at Mon Nov 25 2019 15:12:34 GMT-0500 (Eastern Standard Time)
-</footer>
-
-<script>prettyPrint();</script>
-<script src="scripts/linenumber.js"></script>
-</body>
-</html>
+//# sourceMappingURL=LRUCache.js.map

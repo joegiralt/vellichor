@@ -59,19 +59,36 @@
 </code></pre>
 <h1>Implementations/API</h1>
 <ul>
-<li>Double Ended Queue</li>
+<li>Double Ended Queue<a href="https://github.com/invertase/denque">(typescript port of Denque)</a></li>
 <li>(Singly) Linked List</li>
 <li>LRU Cache</li>
 <li>Heap Queue (Todo)</li>
 </ul>
 <p><a href="https://joegiralt.github.io/vellichor/index.html">Full API Docs here</a></p>
 <h2>Benchmarks</h2>
+<h3>DoubleEndedQueue vs <a href="https://github.com/invertase/denque">Deque</a></h3>
 <h4>Platform info:</h4>
-<pre class="prettyprint source"><code>(Todo)
-Darwin 17.0.0 x64
-Node.JS 9.4.0
-V8 6.2.414.46-node.17
-Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz × 8
+<pre class="prettyprint source"><code>Darwin 16.7.0 x64
+Node.JS 13.0.1
+V8 7.8.279.17-node.14
+Intel(R) Core(TM) i5-3230M CPU @ 2.60GHz × 4
+</code></pre>
+<h4>2 million items in queue</h4>
+<p>(3 x shift + 3 x push ops per 'op')</p>
+<pre class="prettyprint source"><code>denque x 34,584,460 ops/sec ±1.18% (83 runs sampled)
+vellichor-double-ended-queue x 34,662,988 ops/sec ±0.90% (87 runs sampled)
+</code></pre>
+<h4>Splice</h4>
+<p>(1 x splice per 'op') - initial size of 100,000 items</p>
+<pre class="prettyprint source"><code>denque.splice x 410,073 ops/sec ±37.09% (59 runs sampled)
+vellichor-doubleEndedQueue.splice x 426,407 ops/sec ±24.12% (64 runs sampled)
+native array splice x 8,070 ops/sec ±18.39% (46 runs sampled)
+</code></pre>
+<h4>Remove One</h4>
+<p>(1 x removeOne + 10 x push per 'op') - initial size of 100,000 items</p>
+<pre class="prettyprint source"><code>denque.removeOne x 533,924 ops/sec ±1.18% (82 runs sampled)
+vellichor-doubleEndedQueue.removeOne x 535,881 ops/sec ±1.16% (87 runs sampled)
+native array splice x 2,362 ops/sec ±1.77% (87 runs sampled)
 </code></pre></article>
     </section>
 
@@ -85,7 +102,7 @@ Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz × 8
 <br class="clear">
 
 <footer>
-    Documentation generated at Sun Nov 24 2019 17:02:56 GMT-0500 (Eastern Standard Time)
+    Documentation generated at Mon Nov 25 2019 15:12:34 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script>prettyPrint();</script>

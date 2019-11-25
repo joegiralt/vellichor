@@ -1,44 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>DoubleEndedQueue/DoubleEndedQueue.js - Postman Documentation</title>
-
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/ionicons.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
-</head>
-<body>
-
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger" class="navicon-button x">
-  <div class="navicon"></div>
-</label>
-
-<label for="nav-trigger" class="overlay"></label>
-
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DoubleEndedQueue.html">DoubleEndedQueue</a><ul class='methods'><li data-type='method'><a href="DoubleEndedQueue.html#clear">clear</a></li><li data-type='method'><a href="DoubleEndedQueue.html#get">get</a></li><li data-type='method'><a href="DoubleEndedQueue.html#isEmpty">isEmpty</a></li><li data-type='method'><a href="DoubleEndedQueue.html#peek">peek</a></li><li data-type='method'><a href="DoubleEndedQueue.html#peekAt">peekAt</a></li><li data-type='method'><a href="DoubleEndedQueue.html#peekBack">peekBack</a></li><li data-type='method'><a href="DoubleEndedQueue.html#peekFront">peekFront</a></li><li data-type='method'><a href="DoubleEndedQueue.html#pop">pop</a></li><li data-type='method'><a href="DoubleEndedQueue.html#push">push</a></li><li data-type='method'><a href="DoubleEndedQueue.html#remove">remove</a></li><li data-type='method'><a href="DoubleEndedQueue.html#removeOne">removeOne</a></li><li data-type='method'><a href="DoubleEndedQueue.html#shift">shift</a></li><li data-type='method'><a href="DoubleEndedQueue.html#size">size</a></li><li data-type='method'><a href="DoubleEndedQueue.html#splice">splice</a></li><li data-type='method'><a href="DoubleEndedQueue.html#toArray">toArray</a></li><li data-type='method'><a href="DoubleEndedQueue.html#unshift">unshift</a></li></ul></li><li><a href="LinkedList.html">LinkedList</a><ul class='methods'><li data-type='method'><a href="LinkedList.html#append">append</a></li><li data-type='method'><a href="LinkedList.html#asArray">asArray</a></li><li data-type='method'><a href="LinkedList.html#insert">insert</a></li><li data-type='method'><a href="LinkedList.html#prepend">prepend</a></li><li data-type='method'><a href="LinkedList.html#remove">remove</a></li><li data-type='method'><a href="LinkedList.html#reverse">reverse</a></li><li data-type='method'><a href="LinkedList.html#traverseToIndex">traverseToIndex</a></li></ul></li><li><a href="LRUCache.html">LRUCache</a><ul class='methods'><li data-type='method'><a href="LRUCache.html#clear">clear</a></li><li data-type='method'><a href="LRUCache.html#delete">delete</a></li><li data-type='method'><a href="LRUCache.html#get">get</a></li><li data-type='method'><a href="LRUCache.html#set">set</a></li><li data-type='method'><a href="LRUCache.html#updateMax">updateMax</a></li></ul></li></ul>
-</nav>
-
-<div id="main">
-    
-    <h1 class="page-title">DoubleEndedQueue/DoubleEndedQueue.js</h1>
-    
-
-    
-
-
-
-    
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>"use strict";
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Custom implementation of a double ended queue.
@@ -54,7 +14,7 @@ class DoubleEndedQueue {
         this.tail = 0;
         this.capacityMask = 0x3;
         this.list = new Array(4);
-        if (Array.isArray(array) &amp;&amp; array.length !== 0) {
+        if (Array.isArray(array) && array.length !== 0) {
             this.fromArray(array);
         }
     }
@@ -73,13 +33,13 @@ class DoubleEndedQueue {
             return void 0;
         }
         const len = this.size();
-        if (idx >= len || idx &lt; -len) {
+        if (idx >= len || idx < -len) {
             return undefined;
         }
-        if (idx &lt; 0) {
+        if (idx < 0) {
             idx += len;
         }
-        idx = (this.head + idx) &amp; this.capacityMask;
+        idx = (this.head + idx) & this.capacityMask;
         return this.list[idx];
     }
     /**
@@ -129,7 +89,7 @@ class DoubleEndedQueue {
         if (this.head === this.tail) {
             return 0;
         }
-        if (this.head &lt; this.tail) {
+        if (this.head < this.tail) {
             return this.tail - this.head;
         }
         else {
@@ -145,12 +105,12 @@ class DoubleEndedQueue {
             return this.size();
         }
         const len = this.list.length;
-        this.head = (this.head - 1 + len) &amp; this.capacityMask;
+        this.head = (this.head - 1 + len) & this.capacityMask;
         this.list[this.head] = item;
         if (this.tail === this.head) {
             this.growArray();
         }
-        if (this.head &lt; this.tail) {
+        if (this.head < this.tail) {
             return this.tail - this.head;
         }
         else {
@@ -169,8 +129,8 @@ class DoubleEndedQueue {
         }
         const item = this.list[head];
         this.list[head] = undefined;
-        this.head = (head + 1) &amp; this.capacityMask;
-        if (head &lt; 2 &amp;&amp; this.tail > 10000 &amp;&amp; this.tail &lt;= this.list.length >>> 2) {
+        this.head = (head + 1) & this.capacityMask;
+        if (head < 2 && this.tail > 10000 && this.tail <= this.list.length >>> 2) {
             this.shrinkArray();
         }
         return item;
@@ -185,11 +145,11 @@ class DoubleEndedQueue {
         }
         const tail = this.tail;
         this.list[tail] = item;
-        this.tail = (tail + 1) &amp; this.capacityMask;
+        this.tail = (tail + 1) & this.capacityMask;
         if (this.tail === this.head) {
             this.growArray();
         }
-        if (this.head &lt; this.tail) {
+        if (this.head < this.tail) {
             return this.tail - this.head;
         }
         else {
@@ -207,10 +167,10 @@ class DoubleEndedQueue {
             return undefined;
         }
         const len = this.list.length;
-        this.tail = (tail - 1 + len) &amp; this.capacityMask;
+        this.tail = (tail - 1 + len) & this.capacityMask;
         const item = this.list[this.tail];
         this.list[this.tail] = undefined;
-        if (this.head &lt; 2 &amp;&amp; tail > 10000 &amp;&amp; tail &lt;= len >>> 2) {
+        if (this.head < 2 && tail > 10000 && tail <= len >>> 2) {
             this.shrinkArray();
         }
         return item;
@@ -232,28 +192,28 @@ class DoubleEndedQueue {
         }
         const size = this.size();
         const len = this.list.length;
-        if (idx >= size || idx &lt; -size) {
+        if (idx >= size || idx < -size) {
             return void 0;
         }
-        if (idx &lt; 0) {
+        if (idx < 0) {
             idx += size;
         }
-        idx = (this.head + idx) &amp; this.capacityMask;
+        idx = (this.head + idx) & this.capacityMask;
         const item = this.list[idx];
         let k;
-        if (index &lt; size / 2) {
+        if (index < size / 2) {
             for (k = index; k > 0; k--) {
-                this.list[idx] = this.list[(idx = (idx - 1 + len) &amp; this.capacityMask)];
+                this.list[idx] = this.list[(idx = (idx - 1 + len) & this.capacityMask)];
             }
             this.list[idx] = void 0;
-            this.head = (this.head + 1 + len) &amp; this.capacityMask;
+            this.head = (this.head + 1 + len) & this.capacityMask;
         }
         else {
             for (k = size - 1 - index; k > 0; k--) {
-                this.list[idx] = this.list[(idx = (idx + 1 + len) &amp; this.capacityMask)];
+                this.list[idx] = this.list[(idx = (idx + 1 + len) & this.capacityMask)];
             }
             this.list[idx] = void 0;
-            this.tail = (this.tail - 1 + len) &amp; this.capacityMask;
+            this.tail = (this.tail - 1 + len) & this.capacityMask;
         }
         return item;
     }
@@ -278,10 +238,10 @@ class DoubleEndedQueue {
         }
         const size = this.size();
         const len = this.list.length;
-        if (idx >= size || idx &lt; -size || count &lt; 1) {
+        if (idx >= size || idx < -size || count < 1) {
             return void 0;
         }
-        if (idx &lt; 0) {
+        if (idx < 0) {
             idx += size;
         }
         if (count === 1 || !count) {
@@ -289,7 +249,7 @@ class DoubleEndedQueue {
             removed[0] = this.removeOne(idx);
             return removed;
         }
-        if (idx === 0 &amp;&amp; idx + count >= size) {
+        if (idx === 0 && idx + count >= size) {
             removed = this.toArray();
             this.clear();
             return removed;
@@ -299,51 +259,51 @@ class DoubleEndedQueue {
         }
         let k;
         removed = new Array(count);
-        for (k = 0; k &lt; count; k++) {
-            removed[k] = this.list[(this.head + idx + k) &amp; this.capacityMask];
+        for (k = 0; k < count; k++) {
+            removed[k] = this.list[(this.head + idx + k) & this.capacityMask];
         }
-        idx = (this.head + idx) &amp; this.capacityMask;
+        idx = (this.head + idx) & this.capacityMask;
         if (index + count === size) {
-            this.tail = (this.tail - count + len) &amp; this.capacityMask;
+            this.tail = (this.tail - count + len) & this.capacityMask;
             for (k = count; k > 0; k--) {
-                this.list[(idx = (idx + 1 + len) &amp; this.capacityMask)] = void 0;
+                this.list[(idx = (idx + 1 + len) & this.capacityMask)] = void 0;
             }
             return removed;
         }
         if (index === 0) {
-            this.head = (this.head + count + len) &amp; this.capacityMask;
+            this.head = (this.head + count + len) & this.capacityMask;
             for (k = count - 1; k > 0; k--) {
-                this.list[(idx = (idx + 1 + len) &amp; this.capacityMask)] = void 0;
+                this.list[(idx = (idx + 1 + len) & this.capacityMask)] = void 0;
             }
             return removed;
         }
-        if (idx &lt; size / 2) {
-            this.head = (this.head + index + count + len) &amp; this.capacityMask;
+        if (idx < size / 2) {
+            this.head = (this.head + index + count + len) & this.capacityMask;
             for (k = index; k > 0; k--) {
-                this.unshift(this.list[(idx = (idx - 1 + len) &amp; this.capacityMask)]);
+                this.unshift(this.list[(idx = (idx - 1 + len) & this.capacityMask)]);
             }
-            idx = (this.head - 1 + len) &amp; this.capacityMask;
+            idx = (this.head - 1 + len) & this.capacityMask;
             while (deletionCount > 0) {
-                this.list[(idx = (idx - 1 + len) &amp; this.capacityMask)] = void 0;
+                this.list[(idx = (idx - 1 + len) & this.capacityMask)] = void 0;
                 deletionCount--;
             }
-            if (index &lt; 0) {
+            if (index < 0) {
                 this.tail = idx;
             }
         }
         else {
             this.tail = idx;
-            idx = (idx + count + len) &amp; this.capacityMask;
+            idx = (idx + count + len) & this.capacityMask;
             for (k = size - (count + index); k > 0; k--) {
                 this.push(this.list[idx++]);
             }
             idx = this.tail;
             while (deletionCount > 0) {
-                this.list[(idx = (idx + 1 + len) &amp; this.capacityMask)] = void 0;
+                this.list[(idx = (idx + 1 + len) & this.capacityMask)] = void 0;
                 deletionCount--;
             }
         }
-        if (this.head &lt; 2 &amp;&amp; this.tail > 10000 &amp;&amp; this.tail &lt;= len >>> 2) {
+        if (this.head < 2 && this.tail > 10000 && this.tail <= len >>> 2) {
             this.shrinkArray();
         }
         return removed;
@@ -366,7 +326,7 @@ class DoubleEndedQueue {
             return void 0;
         }
         const size = this.size();
-        if (idx &lt; 0) {
+        if (idx < 0) {
             idx += size;
         }
         if (idx > size) {
@@ -379,20 +339,20 @@ class DoubleEndedQueue {
             let argumentsLength = extraArgs.length;
             const len = this.list.length;
             let argumentsIndex = 0;
-            if (!size || idx &lt; size / 2) {
+            if (!size || idx < size / 2) {
                 temp = new Array(idx);
-                for (k = 0; k &lt; idx; k++) {
-                    temp[k] = this.list[(this.head + k) &amp; this.capacityMask];
+                for (k = 0; k < idx; k++) {
+                    temp[k] = this.list[(this.head + k) & this.capacityMask];
                 }
                 if (count === 0) {
                     removed = [];
                     if (idx > 0) {
-                        this.head = (this.head + idx + len) &amp; this.capacityMask;
+                        this.head = (this.head + idx + len) & this.capacityMask;
                     }
                 }
                 else {
                     removed = this.remove(idx, count);
-                    this.head = (this.head + idx + len) &amp; this.capacityMask;
+                    this.head = (this.head + idx + len) & this.capacityMask;
                 }
                 while (argumentsLength > argumentsIndex) {
                     this.unshift(extraArgs[--argumentsLength]);
@@ -404,23 +364,23 @@ class DoubleEndedQueue {
             else {
                 temp = new Array(size - (idx + count));
                 const tempLength = temp.length;
-                for (k = 0; k &lt; tempLength; k++) {
-                    temp[k] = this.list[(this.head + idx + count + k) &amp; this.capacityMask];
+                for (k = 0; k < tempLength; k++) {
+                    temp[k] = this.list[(this.head + idx + count + k) & this.capacityMask];
                 }
                 if (count === 0) {
                     removed = [];
                     if (idx !== size) {
-                        this.tail = (this.head + idx + len) &amp; this.capacityMask;
+                        this.tail = (this.head + idx + len) & this.capacityMask;
                     }
                 }
                 else {
                     removed = this.remove(idx, count);
-                    this.tail = (this.tail - tempLength + len) &amp; this.capacityMask;
+                    this.tail = (this.tail - tempLength + len) & this.capacityMask;
                 }
-                while (argumentsIndex &lt; argumentsLength) {
+                while (argumentsIndex < argumentsLength) {
                     this.push(extraArgs[argumentsIndex++]);
                 }
-                for (k = 0; k &lt; tempLength; k++) {
+                for (k = 0; k < tempLength; k++) {
                     this.push(temp[k]);
                 }
             }
@@ -463,7 +423,7 @@ class DoubleEndedQueue {
      * @private
      */
     fromArray(array) {
-        for (let idx = 0, len = array.length; idx &lt; len; idx++) {
+        for (let idx = 0, len = array.length; idx < len; idx++) {
             this.push(array[idx]);
         }
     }
@@ -479,15 +439,15 @@ class DoubleEndedQueue {
         const len = list.length;
         let i;
         if (fullCopy || this.head > this.tail) {
-            for (i = this.head; i &lt; len; i++) {
+            for (i = this.head; i < len; i++) {
                 newArray.push(list[i]);
             }
-            for (i = 0; i &lt; this.tail; i++) {
+            for (i = 0; i < this.tail; i++) {
                 newArray.push(list[i]);
             }
         }
         else {
-            for (i = this.head; i &lt; this.tail; i++) {
+            for (i = this.head; i < this.tail; i++) {
                 newArray.push(list[i]);
             }
         }
@@ -506,7 +466,7 @@ class DoubleEndedQueue {
         // head is at 0 and array is now full, safe to extend
         this.tail = this.list.length;
         this.list.length *= 2;
-        this.capacityMask = (this.capacityMask &lt;&lt; 1) | 1;
+        this.capacityMask = (this.capacityMask << 1) | 1;
     }
     /**
      * Shrinks the internal list array.
@@ -518,22 +478,4 @@ class DoubleEndedQueue {
     }
 }
 exports.default = DoubleEndedQueue;
-//# sourceMappingURL=DoubleEndedQueue.js.map</code></pre>
-        </article>
-    </section>
-
-
-
-
-</div>
-
-<br class="clear">
-
-<footer>
-    Documentation generated at Mon Nov 25 2019 15:12:34 GMT-0500 (Eastern Standard Time)
-</footer>
-
-<script>prettyPrint();</script>
-<script src="scripts/linenumber.js"></script>
-</body>
-</html>
+//# sourceMappingURL=DoubleEndedQueue.js.map
