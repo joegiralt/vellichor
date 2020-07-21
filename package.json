@@ -32,7 +32,7 @@
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.12",
     "benchmark": "^2.1.4",
-    "codecov": "^3.6.1",
+    "codecov": "^3.7.1",
     "denque": "^1.4.1",
     "fast-check": "^1.18.1",
     "jest": "^24.9.0",
