@@ -6,6 +6,6 @@ node_js:
   - "10"
 script:
   - npm run lint
-  - npm run test -- --ci --verbose --coverage
+  - npm run test -- --ci --verbose
 after_success:
   - codecov
