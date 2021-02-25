@@ -46,5 +46,8 @@
   },
   "jest": {
     "globalSetup": "jest-chance"
+  },
+  "dependencies": {
+    "vellichor": "^1.0.1"
   }
 }

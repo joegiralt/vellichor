@@ -50,7 +50,7 @@ vellichor-double-ended-queue x 34,662,988 ops/sec ±0.90% (87 runs sampled)
 
 ```
 denque.splice x 410,073 ops/sec ±37.09% (59 runs sampled)
-vellichor-doubleEndedQueue.splice x 426,407 ops/sec ±24.12% (64 runs sampled)
+DoubleEndedQueue.splice x 426,407 ops/sec ±24.12% (64 runs sampled)
 native array splice x 8,070 ops/sec ±18.39% (46 runs sampled)
 ```
 
@@ -60,6 +60,6 @@ native array splice x 8,070 ops/sec ±18.39% (46 runs sampled)
 
 ```
 denque.removeOne x 533,924 ops/sec ±1.18% (82 runs sampled)
-vellichor-doubleEndedQueue.removeOne x 535,881 ops/sec ±1.16% (87 runs sampled)
+DoubleEndedQueue.removeOne x 535,881 ops/sec ±1.16% (87 runs sampled)
 native array splice x 2,362 ops/sec ±1.77% (87 runs sampled)
 ```
